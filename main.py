@@ -47,6 +47,7 @@ def updateProduct(id: int, updatedProduct: Product):
 def deleteProduct(id: int):
     for i in range(len(products)):
         if products[i].id == id:
-            products.remove(products[i])
+            # products.remove(products[i]) # --> this can
+            del products[i] # --> this also can
             return "Pruduct has been deleted successfully"
     return {"error": "Product not found"}
