@@ -27,3 +27,17 @@ You can do put all the packages required to one file requirements.txt, and then 
 ```bash
 pip install -r requirements.txt
 ```
+
+### 3. after do some codes then run the application
+
+let's say your `main.py` is on the root folder
+
+```bash
+uvicorn main:app --reload
+```
+
+if inside folder _app_ like `/app/main.py` then do this
+
+```bash
+uvicorn app.main:app --reload
+```
