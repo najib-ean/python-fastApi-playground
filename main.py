@@ -7,6 +7,8 @@ from sqlalchemy import text
 from core.config import settings
 from database.db import get_db
 
+from schemas.user import UserCreate
+
 
 app: FastAPI = FastAPI(title=settings.TITLE)
 
@@ -26,10 +28,10 @@ def health_check_db() -> Dict[str, str]:
         return {"status": "error", "message": str(e)}
 
 
-# products = [
-#     Product(id=1, name="Apple", description="Red fruit", price=10.5, quantity=5),
-#     Product(id=2, name="Banana", description="Yellow fruit", price=5.0, quantity=10),
-# ]
+@app.post("/register")
+def register_user(user: UserCreate):
+    print(user.email)
+    print(user.full_name)
 
 
 # @app.get("/")

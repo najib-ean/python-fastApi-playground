@@ -10,4 +10,5 @@ class User(BaseModel, table=True):
     full_name: str
     password: str
 
+    # Relationship with Blog
     blog: List("Blog") = Relationship(back_populates="user")
