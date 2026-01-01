@@ -38,6 +38,8 @@ Using _alembic_ package to do migration table to database.</br>
   alembic init alembic
   ```
 
+  It will generate folder `/alembic` and also file `alembic.ini` in root folder
+
 - Create new migration file
 
   ```bash

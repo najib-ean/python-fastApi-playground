@@ -1,16 +1,18 @@
 from fastapi import FastAPI
-
-# from models import Product
-
 from typing import Dict
 from sqlalchemy import text
 from core.config import settings
-from database.db import get_db
-
-from schemas.user import UserCreate
-
+from database.db import get_db, init_db
+from schemas.user import UserSchema
+from router.user import router as user_router
 
 app: FastAPI = FastAPI(title=settings.TITLE)
+app.include_router(user_router, prefix="/api/v1")
+
+
+@app.on_event("startup")
+def on_startup():
+    init_db()
 
 
 @app.get("/")
@@ -28,10 +30,10 @@ def health_check_db() -> Dict[str, str]:
         return {"status": "error", "message": str(e)}
 
 
-@app.post("/register")
-def register_user(user: UserCreate):
-    print(user.email)
-    print(user.full_name)
+# @app.post("/register")
+# def register_user(user: UserSchema):
+#     print(user.email)
+#     print(user.full_name)
 
 
 # @app.get("/")
