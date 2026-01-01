@@ -22,14 +22,8 @@ deactivate
 
 #### package installation
 
-install fastApi and the web server runner `uvicorn`:
+You can do put all the packages required to one file requirements.txt, and then do installation command
 
 ```bash
-pip install fastapi uvicorn
-```
-
-install orm sqlAlchemy and postgres package. Remember NOT **psycopg2** but `psycopg`:
-
-```bash
-pip install sqlalchemy psycopg
+pip install -r requirements.txt
 ```
