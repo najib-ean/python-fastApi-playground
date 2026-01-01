@@ -2,6 +2,7 @@ from sqlmodel import Field, Relationship
 from database.models.base import BaseModel
 
 
+# table=True is a must
 class Blog(BaseModel, table=True):
     title: str = Field(max_length=200)
     slug: str = Field(max_length=200, unique=True)

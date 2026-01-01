@@ -3,7 +3,8 @@ from database.models.base import BaseModel
 from sqlmodel import Field, Relationship
 
 
-class User(BaseModel):
+# table=True is a must
+class User(BaseModel, table=True):
     username: str = Field(unique=True, index=True)
     email: str = Field(unique=True, index=True)
     full_name: str
