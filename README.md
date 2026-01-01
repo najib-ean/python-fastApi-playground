@@ -28,7 +28,29 @@ You can do put all the packages required to one file requirements.txt, and then 
 pip install -r requirements.txt
 ```
 
-### 3. after do some codes then run the application
+### 3. generate and migrate
+
+Using _alembic_ package to do migration table to database.</br>
+
+- First need to generate / init
+
+  ```bash
+  alembic init alembic
+  ```
+
+- Create new migration file
+
+  ```bash
+  alembic revision --autogenerate -m "your message here"
+  ```
+
+- Do migration
+
+  ```bash
+  alembic upgrade head
+  ```
+
+### 4. run the application
 
 let's say your `main.py` is on the root folder
 
