@@ -1,6 +1,6 @@
-## step by step
+# step by step
 
-#### create virtual environment and activate it
+### 1. create virtual environment and activate it
 
 create virtual environment:
 
@@ -20,7 +20,7 @@ If you want to `deactivate`:
 deactivate
 ```
 
-#### package installation
+### 2. package installation
 
 You can do put all the packages required to one file requirements.txt, and then do installation command
 
