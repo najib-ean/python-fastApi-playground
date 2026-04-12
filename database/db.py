@@ -13,7 +13,7 @@ from database.models.blog import Blog
 
 # ⬇️ Now create tables (only once at app startup)
 def init_db():
-    print("Creating tables")
+    print("Initiating database")
     SQLModel.metadata.create_all(engine)
 
 
