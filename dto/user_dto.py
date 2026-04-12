@@ -8,6 +8,8 @@ class BaseUserSchema(BaseModel):
     email: Optional[str] = None
     full_name: Optional[str] = None
 
+    model_config = {"from_attributes": True}
+
 
 class CreateUserSchema(BaseUserSchema):
     username: str
@@ -25,7 +27,7 @@ class UserResponseSchema(BaseModel):
     created_at: datetime
     updated_at: datetime
 
-    # model_config = {"from_attributes": True}
+    model_config = {"from_attributes": True}
 
 
 class UpdateUserSchema(BaseUserSchema):
