@@ -28,6 +28,12 @@ You can do put all the packages required to one file requirements.txt, and then 
 pip install -r requirements.txt
 ```
 
+But if you not sure about all package that alaready installed, can do generate the file `requirements.txt` by command
+
+```bash
+pip freeze > requirements.txt
+```
+
 ### 3. generate and migrate
 
 Using _alembic_ package to do migration table to database.</br>
